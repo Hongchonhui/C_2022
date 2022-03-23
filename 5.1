@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void SquaredSum(double p, double q) {
+  double w;
+  w = pow ((p + q), 2);
+  cout << w;
+}
+ 
+int main()
+{
+    double a, b, c, d;
+    cout << "первая дробь:"<<endl;
+    cin >> a >> b;
+    cout << "вторая дробь:"<<endl;
+    cin >> c >> d;
+    
+    double e, f;
+    e = a / b;
+    f = c / d;
+    SquaredSum(e, f);
+     
+     return 0;
+}
