@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    int f;
+    int n = 1;
+    FILE *output;
+    output = fopen("output", "r");
+        while (n < 1000){
+            fscanf(output, "%d ", &f);
+            printf("%d. %d\n", n, f);
+            n++;
+            }
+    fclose(output);
+
+return 0;
+}
