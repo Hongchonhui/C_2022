@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+
+void Sort(int n) {
+
+    int *arr;
+    arr = new int[n]; // выделение памяти под массив
+
+    for (int i = 0; i < n; i++) {
+        cout << "arr[" << i << "] = ";
+        cin >> arr[i];
+    }
+
+    int temp; // временная переменная для обмена элементов местами
+
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] < arr[j + 1]) {
+                // меняем элементы местами
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
+
+    delete [] arr; // освобождение памяти;
+}
+ 
+int main()
+{
+    int size;  
+    cout << "n = ";
+    cin >> size;
+        if (size <= 0) {
+        // Размер масива должен быть положитлеьным
+        cerr << "Invalid size" << endl;
+    }
+       
+
+    Sort(size);
+     
+     return 0;
+}
