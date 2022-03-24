@@ -3,9 +3,13 @@ using namespace std;
 
 class Bucket 
 {
+        
 public:
+    double volume;
+    double used;
+    Bucket (int a, int b) {volume = a, used = b;}
     
-    double volume, used;
+
     
     void flush()
     {
@@ -27,28 +31,29 @@ public:
         }
         
     }
-    
+private:
+
     
 };
 
 
 int main()
 {
-    Bucket firstBucket;
-    firstBucket.volume = 10;
-    firstBucket.used = 5;
+    Bucket firstBucket(10, 5);
+    // firstBucket.volume = 10;
+    // firstBucket.used = 5;
     firstBucket.flush();
     cout << "В ведре " << firstBucket.used << "литр осталось" << endl;
 
     
-    Bucket secondBucket;
-    secondBucket.volume = 10;
-    secondBucket.used = 10;
+    Bucket secondBucket(10, 10);
+    // secondBucket.volume = 10;
+    // secondBucket.used = 10;
     secondBucket.fill();
     
-    Bucket thirdBucket;
-    thirdBucket.volume = 10;
-    thirdBucket.used = 8;
+    Bucket thirdBucket(10, 8);
+    // thirdBucket.volume = 10;
+    // thirdBucket.used = 8;
     thirdBucket.fill();
     
     
