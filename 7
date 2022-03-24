@@ -1,0 +1,57 @@
+#include <iostream>
+using namespace std;
+
+class Bucket 
+{
+public:
+    
+    double volume, used;
+    
+    void flush()
+    {
+        used = 0;
+        
+    }
+    
+    void fill()
+    {
+        if(volume == used)
+        {
+            cout << 0 << endl;
+        }
+        else {
+            cout << "Разница:" << volume - used << endl;
+            used = volume;
+            cout << "Bедро заполнилось" << endl;
+            
+        }
+        
+    }
+    
+    
+};
+
+
+int main()
+{
+    Bucket firstBucket;
+    firstBucket.volume = 10;
+    firstBucket.used = 5;
+    firstBucket.flush();
+    cout << "В ведре " << firstBucket.used << "литр осталось" << endl;
+
+    
+    Bucket secondBucket;
+    secondBucket.volume = 10;
+    secondBucket.used = 10;
+    secondBucket.fill();
+    
+    Bucket thirdBucket;
+    thirdBucket.volume = 10;
+    thirdBucket.used = 8;
+    thirdBucket.fill();
+    
+    
+    
+    return 0;
+}
