@@ -2,10 +2,11 @@
 #include <cmath>
 using namespace std;
 
-void SquaredSum(double p, double q) {
+double SquaredSum(double p, double q) {
   double w;
   w = pow ((p + q), 2);
-  cout << w;
+  return w;
+  
 }
  
 int main()
@@ -19,7 +20,7 @@ int main()
     double e, f;
     e = a / b;
     f = c / d;
-    SquaredSum(e, f);
+    cout << SquaredSum(e, f) << endl;
      
-     return 0;
+    return 0;
 }
