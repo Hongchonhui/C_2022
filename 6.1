@@ -2,11 +2,11 @@
 #include <cstring>
 using namespace std;
 
-void reverse() {
-    char str[50];
-    cin >> str;
-    char str1[strlen(str)];       
-            int i = strlen(str)-1;
+void reverse(char *str) {
+    
+    int n = strlen(str);
+    char str1[n];       
+            int i = n-1;
             int j = 0;
             while (i >= 0)
             {
@@ -21,8 +21,11 @@ void reverse() {
  
 int main()
 {
+    char str[50];
+    cin >> str;
 
-    reverse();
+    
+    reverse(str);
      
 return 0;
 }
