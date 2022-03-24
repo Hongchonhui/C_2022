@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <sys/io.h>
 
 int main()
 {
@@ -6,7 +7,7 @@ int main()
     int n = 1;
     FILE *output;
     output = fopen("output", "r");
-        while (n < 1000){
+        while (!EOF){
             fscanf(output, "%d ", &f);
             printf("%d. %d\n", n, f);
             n++;
