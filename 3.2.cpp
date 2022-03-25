@@ -1,18 +1,21 @@
-#include <stdio.h>
-#include <sys/io.h>
+#include <fstream>
+#include <iostream>
+#include <string>
 
-int main()
-{
-    int f;
-    int n = 1;
-    FILE *output;
-    output = fopen("output", "r");
-        while (!EOF){
-            fscanf(output, "%d ", &f);
-            printf("%d. %d\n", n, f);
-            n++;
-            }
-    fclose(output);
+using namespace std;
 
-return 0;
+int main () {
+string line;
+int i;
+
+ifstream file ("output.txt");
+
+if (file.is_open()) {
+i = 0;
+while ( getline (file, line) ) {
+cout << ++i << ". ";
+cout << line << '\n';
+}
+file.close();
+}
 }
