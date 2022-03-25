@@ -17,18 +17,21 @@ public:
         
     }
     
-    void fill()
-    {
-        if(volume == used)
-        {
-            cout << 0 << endl;
-        }
-        else {
-            cout << "Разница:" << volume - used << endl;
+    float fill(float c)
+    {   
+        
+        float rest = c - (volume - used); 
+        used = used + c;   
+        
+        if (used >= volume) {
             used = volume;
-            cout << "Bедро заполнилось" << endl;
-            
+        } 
+        if (rest <= 0)
+        {
+            rest = 0;
         }
+        return rest;    
+        
         
     }
 private:
@@ -39,22 +42,16 @@ private:
 
 int main()
 {
-    Bucket firstBucket(10, 5);
-    // firstBucket.volume = 10;
-    // firstBucket.used = 5;
-    firstBucket.flush();
-    cout << "В ведре " << firstBucket.used << "литр осталось" << endl;
 
-    
-    Bucket secondBucket(10, 10);
-    // secondBucket.volume = 10;
-    // secondBucket.used = 10;
-    secondBucket.fill();
-    
-    Bucket thirdBucket(10, 8);
-    // thirdBucket.volume = 10;
-    // thirdBucket.used = 8;
-    thirdBucket.fill();
+     Bucket test_01(12, 3);
+     cout << "1) " << test_01.volume << ", " << test_01.used << "\n";
+
+     int rest = test_01.fill(14);
+     cout << "2) " << test_01.used << ", " << rest << "\n";
+
+     test_01.flush();
+     rest = test_01.fill(8);
+     cout << "3) " << test_01.used << ", " << rest << "\n";
     
     
     
