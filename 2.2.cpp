@@ -8,15 +8,12 @@ int main()
     int s = 0;
     while (i < 1000)
     {
-        if (i % 4 == 1) {
-           cout << i << endl;
-            }
-            
+        cout << i << endl;    
         if (i % 7 == 0) {
            s += i;
        }  
 
-       ++i;
+       i += 4;
        
     }
     cout << "sum=" << s << endl;
